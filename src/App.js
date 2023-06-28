@@ -11,7 +11,7 @@ import Header from "./ui/Header";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Header />
       <Route exact path="/" component={MainPage} />
       <Route path="/about" component={AboutPage} />
