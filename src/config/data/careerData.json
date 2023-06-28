@@ -1,22 +1,22 @@
 [
-    {
-        "date": "2015.03 ~ 2018.02",
-        "name" : "연성대학교",
-        "content": "컴퓨터 소프트웨어학과 졸업 3.8 / 4.5"
-    },
-    {
-        "date": "2017.07 ~ 2017.08",
-        "name" : "넷아이디",
-        "content": "서버개발팀 인턴"
-    },
-    {
-        "date": "2018.04 ~ 2018.10",
-        "name" : "자바기반 IT콘텐츠 개발자 전문과정 수료",
-        "content": "Java 프로그래밍, Oracle Database, MySQL Database, Jsp&Servlet, 웹표준 구현(HTML5, CSS3, Javascript, jQuery)"
-    },
-    {
-        "date": "2018.10 ~ 2022.06",
-        "name" : "아이모토",
-        "content": "웹 에이전시인 아이모토 개발팀에서 3년 9개월간 재직\nMysql 등을 이용한 DB작업 및 최적화\nJavascript, JQuery, Ajax 등을 이용한 html 동적 기능추가\nCSS, Html5 등을 이용한 퍼블리싱 작업\n그누보드, 영카트 등의 독립쇼핑몰 커스터마이징, 플러그인 개발 및 유지보수\nGoogle, facebook, Kakao, Naver 등의 API 연동\nKcp, 이니시스 등의 web,mobile PG 모듈 연동"
-    }
+  {
+    "date": "2015.03 ~ 2018.02",
+    "name": "연성대학교",
+    "content": "컴퓨터 소프트웨어학과 졸업 3.8 / 4.5"
+  },
+  {
+    "date": "2017.07 ~ 2017.08",
+    "name": "넷아이디",
+    "content": "서버개발팀 인턴"
+  },
+  {
+    "date": "2018.04 ~ 2018.10",
+    "name": "자바기반 IT콘텐츠 개발자 전문과정 수료",
+    "content": "Java 프로그래밍, Oracle Database, MySQL Database, Jsp&Servlet, 웹표준 구현(HTML5, CSS3, Javascript, jQuery)"
+  },
+  {
+    "date": "2018.10 ~ 2022.06",
+    "name": "아이모토",
+    "content": "웹 에이전시인 아이모토 개발팀에서 3년 9개월간 재직\nMysql 등을 이용한 DB작업 및 최적화\nJavascript, JQuery, Ajax 등을 이용한 html 동적 기능추가\nCSS, Html5 등을 이용한 퍼블리싱 작업\n그누보드, 영카트 등의 독립쇼핑몰 커스터마이징, 플러그인 개발 및 유지보수\nGoogle, facebook, Kakao, Naver 등의 API 연동\nKcp, 이니시스 등의 web,mobile PG 모듈 연동"
+  }
 ]

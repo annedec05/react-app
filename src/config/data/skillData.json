@@ -1,20 +1,22 @@
 [
-    {
-        "name": "PHP"
-    },
-    {
-        "name": "javascript"
-    },
-    {
-        "name": "HTML/CSS"
-    },
-    {
-        "name": "jQuery"
-    },
-    {
-        "name": "React"
-    },
-    {
-        "name": "MySQL"
-    }
+  {
+    "name": "PHP",
+    "font": "fa-brands fa-php"
+  },
+  {
+    "name": "javascript",
+    "font": "fa-brands fa-square-js"
+  },
+  {
+    "name": "HTML/CSS",
+    "font": "fa-brands fa-html5"
+  },
+  {
+    "name": "React",
+    "font": "fa-brands fa-react"
+  },
+  {
+    "name": "GIT",
+    "font": "fa-brands fa-git"
+  }
 ]
