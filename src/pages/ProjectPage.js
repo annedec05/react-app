@@ -54,16 +54,19 @@ const StyledProject = styled.div`
   height: 100%;
   width: 100%;
   margin: auto;
-  background: #6ca0dc;
+  padding-top: 200px;
+  background: #222;
   .projectWrap {
-    width: 1200px;
+    width: 1100px;
     height: 100%;
+
     h2 {
       cursor: pointer;
       text-align: center;
       color: #fff;
       font-weight: 500;
-      font-size: 3rem;
+      font-size: 2.5rem;
+      font-family: "Montserrat";
     }
 
     h2:before,
@@ -106,6 +109,8 @@ const StyledProject = styled.div`
         margin-bottom: 3%;
         padding: 5% 0;
         white-space: pre-wrap;
+        background: #fff;
+        border-radius: 1rem;
 
         .proj_left {
           flex: 1;
@@ -115,7 +120,7 @@ const StyledProject = styled.div`
         .proj_right {
           flex: 1;
           padding: 0 2%;
-          color: #fff;
+          color: #222;
           font-size: 0.8rem;
           display: flex;
           flex-direction: column;
@@ -142,6 +147,22 @@ const StyledProject = styled.div`
       /*li:nth-child(2n) {
         flex-flow: row-reverse wrap;
       }*/
+    }
+  }
+
+  @media ${(props) => props.theme.mobile} {
+    .projectWrap {
+      margin: 20px 10px;
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      ul {
+        li {
+          flex-direction: column;
+        }
+      }
     }
   }
 `;

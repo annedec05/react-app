@@ -18,7 +18,6 @@ function AboutTxtWrap() {
             );
           })}
         </ul>
-
         <h2>Career & Education</h2>
         <ul class="careerWrap">
           {careerData.map((career, index) => {
@@ -44,18 +43,19 @@ const StyledAbout = styled.div`
   height: 100%;
   width: 100%;
   margin: auto;
-  background: #6ca0dc;
+  padding-top: 200px;
+  background: #222;
 
   .aboutWrap {
-    width: 1200px;
+    width: 1100px;
     height: 100%;
-    margin-top:80px;
     h2 {
       cursor: pointer;
       text-align: center;
       color: #fff;
       font-weight: 500;
-      font-size: 3rem;
+      font-size: 2.5rem;
+      font-family: "Montserrat";
     }
 
     h2:before,
@@ -68,7 +68,6 @@ const StyledAbout = styled.div`
       font-size: 1.25em;
       color: #fff;
       margin-right: 5px;
-
       transition: all 0.5s ease;
     }
 
@@ -87,19 +86,19 @@ const StyledAbout = styled.div`
     }
 
     .skillWrap {
-		display: flex;
-		justify-content: space-around;
-    margin: 100px 0;
+      display: flex;
+      justify-content: space-around;
+      margin: 100px 0;
 
-		li {
-			color: #fff;
-			text-align: center;
-		}
-		i {
-			font-size: 3rem;
-			display: block;
-		}
-	} 
+      li {
+        color: #fff;
+        text-align: center;
+      }
+      i {
+        font-size: 3rem;
+        display: block;
+      }
+    }
 
     .careerWrap {
       display: flex;
@@ -114,32 +113,55 @@ const StyledAbout = styled.div`
         border-radius: 1rem;
         padding: 5% 0;
         margin: 1%;
-        padding : 1%;
+        padding: 1%;
         min-height: 25vh;
-        position:relative;
+        position: relative;
         p.tit {
-          font-size : 1.2rem;
-          font-weight : 700;
+          font-size: 1.2rem;
+          font-weight: 700;
         }
 
         span {
-          font-size:0.8rem;
+          font-size: 0.8rem;
         }
 
         i {
-          position : absolute;
-          top : 10px;
-          right : 10px;
-          font-size : 1.5rem; 
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          font-size: 1.5rem;
         }
 
         div {
-          font-size : 1rem;
-          margin-top : 10px;
-          white-space:pre-wrap;
+          font-size: 1rem;
+          margin-top: 10px;
+          white-space: pre-wrap;
         }
       }
-	} 
+    }
+  }
+
+  @media ${(props) => props.theme.mobile} {
+    .aboutWrap {
+      margin: 20px 10px;
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .skillWrap {
+        margin: 50px 0;
+      }
+
+      .careerWrap {
+        margin: 50px 0;
+
+        li {
+          width: 100%;
+        }
+      }
+    }
+  }
 `;
 
 export default AboutTxtWrap;

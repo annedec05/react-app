@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import theme from "../config";
 
 import mainSrc from "../config/images/crystal.PNG";
 
@@ -8,21 +9,24 @@ function MainTxtWrap() {
   return (
     <StyledHome>
       <div class="main-wrap">
-        <div className="main-left">
-          <div className="img-box"></div>
+        <div class="main-txt">
+          <p class="tit">AHN SU JUNG</p>
+          <p class="tit-typing">I'm Developer</p>
         </div>
 
-        <div className="main-right">
-          <section>
-            <h2>ABOUT ME</h2>
-
+        <div class="txt-wrap">
+          <div class="txt-intro">
+            <h2>
+              <i class="fa-regular fa-message"></i>ABOUT ME
+            </h2>
             <p>
-              안녕하세요. 저는 안수정입니다.
+              안녕하세요. 저는 안수정입니다. 😁
               <br />
               새로운 기술에 두려워하지 않고 끊임없이 도전하는 '만능개발자'가
               되고 싶습니다.
               <br />
-              현재 프론트엔드 개발자로 구직중입니다.
+              웹에이전시에서 3년 9개월의 재직 경력이 있으며 현재 프론트엔드
+              개발자로 구직중입니다.
               <br />
               도전을 경험할 수 있는 회사에서 일하고 싶습니다.
             </p>
@@ -37,10 +41,13 @@ function MainTxtWrap() {
                 <span>Email : </span>annedec05@naver.com
               </li>
             </ul>
-          </section>
-          <Link to="/about" className="more-btn">
-            MORE ABOUT ME
-          </Link>
+
+            <Link to="/about" className="more-btn">
+              MORE ABOUT ME
+            </Link>
+          </div>
+
+          <div class="img-box"></div>
         </div>
       </div>
     </StyledHome>
@@ -48,92 +55,69 @@ function MainTxtWrap() {
 }
 
 const StyledHome = styled.main`
-	display: flex;
-    justify-content: center;
-    align-items: center;
-	height: 100vh;
-	width: 100%;
-	margin: auto;
-	background : #6ca0dc;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  min-height: 100vh;
+  .main-wrap {
+    max-width: 1100px;
+    padding-top: 200px;
+    margin: 0 auto;
 
-	.main-wrap{
-		display: flex;
-		justify-content: center;
-    	align-items: center;
-		height : 100vh;
-		border-radius : 2rem;
-		background : #fff;
-		width : 75%;
-		height : 75%;
-		.main-left {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			margin-left : 3%;
-			.img-box {
-				width: 400px;
-				height: 400px;
-				border-radius: 100%;
-				background-image: url(${(props) => mainSrc});
-				background-size: cover;
-				background-repeat: no-repeat;
-				background-position: center center;
-				position: relative;
-				padding-left : 3%;
-			}
-		}
+    .main-txt {
+      color: #fff;
+      p.tit {
+        font-size: 4rem;
+        font-weight: 700;
+        font-family: "Montserrat";
+        margin: 30px 0;
+      }
+    }
+  }
 
-		.main-right {
-			h2 {
-				font-size : 50px;
-				font-weight : 600;
-				color : #6ca0dc;
-			}
-			width :
-			display : flex;
-			flex-direction : column;
-			justify-content : center;
-			align-items : flex-start;
-			padding: 0 7% 0 5%;
-			ul {
-				display: flex;
-    			flex-wrap: wrap;
-				margin : 50px 0 50px 0;
+  .txt-wrap {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 100px;
 
-				li {
-					width: 50%;
-					padding-bottom: 10px;
-					font-size: 16px;
-					font-weight: 500;
-					color: #6ca0dc;
+    .fa-regular {
+      transform: rotate(90deg);
+      -moz-transform: scaleX(-1);
+      -o-transform: scaleX(-1);
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+      margin-right: 5px;
+    }
 
-					span {
-						color : #333;
-					}
+    .img-box {
+      width: 300px;
+      height: 300px;
+      background-image: url(${(props) => mainSrc});
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      position: relative;
+      padding-left: 3%;
+      border-radius: 100%;
+      filter: grayscale(30%);
+    }
 
-					a {
-						color : #fff;
-						background: #6ca0dc;
-						border-radius: 20px;
-						padding: 2px 15px;
-					}
-				}
-			}
+    .txt-intro {
+      color: #fff;
+      text-align: center;
+    }
 
-		}
-
-		.more-btn {
-			padding : 15px 40px;
-			border-radius : 26px;
-			font-size : 15px;
-			font-weight : 500;
-			color : #fff;
-			line-height : 46px;
-			letter-spacing : 0.5px;
-			background : #6ca0dc;
-		}
-		
-	}
+    .more-btn {
+      padding: 15px 40px;
+      border-radius: 26px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #222;
+      line-height: 46px;
+      letter-spacing: 0.5px;
+      background: #fff;
+    }
+  }
 `;
 
 export default MainTxtWrap;
