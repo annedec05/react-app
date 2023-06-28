@@ -19,7 +19,12 @@ function ProjectTxtWrap() {
                   ></img>
                 </div>
                 <div class="proj_right">
-                  <p class="tit">{proj.name}</p>
+                  <p class="tit">
+                    {proj.name}
+                    <a href={proj.addr} target="_blank">
+                      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                  </p>
                   <div>
                     <span>Description</span>
                     {proj.description}
@@ -100,9 +105,11 @@ const StyledProject = styled.div`
         display: flex;
         margin-bottom: 3%;
         padding: 5% 0;
+        white-space: pre-wrap;
 
         .proj_left {
           flex: 1;
+          min-width: 50%;
         }
 
         .proj_right {
@@ -115,6 +122,11 @@ const StyledProject = styled.div`
 
           p.tit {
             font-size: 1.5rem;
+
+            a {
+              margin-left: 10px;
+              color: #fff;
+            }
           }
 
           span {

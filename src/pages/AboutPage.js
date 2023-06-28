@@ -24,8 +24,9 @@ function AboutTxtWrap() {
           {careerData.map((career, index) => {
             return (
               <li>
+                <i class={career.gbn}></i>
+                <p class="tit">{career.name}</p>
                 <span>{career.date}</span>
-                <div>{career.name}</div>
                 <div>{career.content}</div>
               </li>
             );
@@ -48,6 +49,7 @@ const StyledAbout = styled.div`
   .aboutWrap {
     width: 1200px;
     height: 100%;
+    margin-top:80px;
     h2 {
       cursor: pointer;
       text-align: center;
@@ -87,10 +89,11 @@ const StyledAbout = styled.div`
     .skillWrap {
 		display: flex;
 		justify-content: space-around;
+    margin: 100px 0;
+
 		li {
 			color: #fff;
 			text-align: center;
-			margin: 50px 0 100px 0;
 		}
 		i {
 			font-size: 3rem;
@@ -99,15 +102,43 @@ const StyledAbout = styled.div`
 	} 
 
     .careerWrap {
-		li {
-			color: #fff;
-			width: 49%;
-			border: 1px solid #fff;
-			border-radius: 1rem;
-			text-align: center;
-			padding: 5% 0;
-			margin-bottom: 2%;
-		}
+      display: flex;
+      flex-wrap: wrap;
+      margin: 100px 0;
+      justify-content: space-between;
+
+      li {
+        color: #fff;
+        width: 45%;
+        border: 1px solid #fff;
+        border-radius: 1rem;
+        padding: 5% 0;
+        margin: 1%;
+        padding : 1%;
+        min-height: 25vh;
+        position:relative;
+        p.tit {
+          font-size : 1.2rem;
+          font-weight : 700;
+        }
+
+        span {
+          font-size:0.8rem;
+        }
+
+        i {
+          position : absolute;
+          top : 10px;
+          right : 10px;
+          font-size : 1.5rem; 
+        }
+
+        div {
+          font-size : 1rem;
+          margin-top : 10px;
+          white-space:pre-wrap;
+        }
+      }
 	} 
 `;
 

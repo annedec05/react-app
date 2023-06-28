@@ -30,12 +30,6 @@ function Header(props) {
             <i class="fa-brands fa-github"></i>
           </a>
         </li>
-        <li>
-          <a href="#null" target="_blank">
-            <span>Resume</span>
-            <i class="fa-solid fa-file"></i>
-          </a>
-        </li>
       </ul>
     </StyledHeader>
   );
