@@ -33,8 +33,8 @@ function MainTxtWrap() {
 
   const animatedItem = {
     0: useScrollFadeIn("up", 1, 0),
-    1: useScrollFadeIn("right", 1, 0.2),
-    2: useScrollFadeIn("left", 1, 0.5),
+    1: useScrollFadeIn("up", 1, 0.2),
+    2: useScrollFadeIn("up", 1, 0.5),
   };
 
   return (
@@ -169,6 +169,26 @@ const StyledHome = styled.main`
       background: #222;
       color: #fff;
       border: 1px solid #fff;
+    }
+  }
+
+  @media ${(props) => props.theme.mobile} {
+    .main-wrap {
+      padding: 100px 10px 0 10px;
+      .main-txt {
+        p.tit {
+          font-size: 15vw;
+          margin: 20px 0;
+        }
+      }
+    }
+    .txt-wrap {
+      display: block;
+      margin-top: 20px;
+
+      .img-box {
+        display: none;
+      }
     }
   }
 `;

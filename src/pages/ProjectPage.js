@@ -183,11 +183,14 @@ const StyledProject = styled.div`
   }
 
   @media ${(props) => props.theme.mobile} {
+    padding-top: 50px;
+
     .projectWrap {
       margin: 20px 10px;
 
       h2 {
         font-size: 1.5rem;
+        margin: 20px 0 40px 0;
       }
 
       ul {

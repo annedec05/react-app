@@ -137,6 +137,24 @@ const StyledHeader = styled.header`
       margin-right: 0;
     }
   }
+
+  @media ${(props) => props.theme.mobile} {
+    padding: 10px 5px;
+    min-height: 40px;
+    ul {
+      li {
+        margin-right: 10px;
+        height: 35px;
+        a > p {
+          display: none;
+        }
+      }
+
+      li:first-child {
+        display: none;
+      }
+    }
+  }
 `;
 
 export default Header;

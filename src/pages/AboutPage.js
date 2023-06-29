@@ -173,6 +173,7 @@ const StyledAbout = styled.div`
   }
 
   @media ${(props) => props.theme.mobile} {
+    padding-top: 50px;
     .aboutWrap {
       margin: 20px 10px;
 
