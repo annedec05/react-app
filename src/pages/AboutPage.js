@@ -1,38 +1,60 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import skillData from "../config/data/skillData.json";
 import careerData from "../config/data/careerData.json";
+import { motion } from "framer-motion";
+import { useScrollFadeIn } from "../hooks";
 
 function AboutTxtWrap() {
+  const animatedItem = {
+    0: useScrollFadeIn("up", 1, 0),
+    1: useScrollFadeIn("left", 1, 0.2),
+    2: useScrollFadeIn("left", 1, 0.3),
+    3: useScrollFadeIn("left", 1, 0.4),
+    4: useScrollFadeIn("left", 1, 0.5),
+    5: useScrollFadeIn("left", 1, 0.6),
+    6: useScrollFadeIn("up", 1, 0.2),
+    7: useScrollFadeIn("up", 1, 0.2),
+    8: useScrollFadeIn("up", 1, 0.2),
+    9: useScrollFadeIn("up", 1, 0.2),
+    10: useScrollFadeIn("up", 1, 0.2),
+  };
+
   return (
-    <StyledAbout>
-      <div class="aboutWrap">
-        <h2>Skill</h2>
-        <ul class="skillWrap">
-          {skillData.map((skill, index) => {
-            return (
-              <li>
-                <i class={skill.font}></i>
-                {skill.name}
-              </li>
-            );
-          })}
-        </ul>
-        <h2>Career & Education</h2>
-        <ul class="careerWrap">
-          {careerData.map((career, index) => {
-            return (
-              <li>
-                <i class={career.gbn}></i>
-                <p class="tit">{career.name}</p>
-                <span>{career.date}</span>
-                <div>{career.content}</div>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-    </StyledAbout>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
+      <StyledAbout>
+        <div className="aboutWrap">
+          <h2 {...animatedItem[0]}>Skill</h2>
+          <ul className="skillWrap">
+            {skillData.map((skill, index) => {
+              return (
+                <li key={skill.num} {...animatedItem[index + 1]}>
+                  <i className={skill.font}></i>
+                  <span>{skill.name}</span>
+                </li>
+              );
+            })}
+          </ul>
+          <h2 {...animatedItem[6]}>Career & Education</h2>
+          <ul className="careerWrap">
+            {careerData.map((career, index) => {
+              return (
+                <li key={career.num} {...animatedItem[index + 7]}>
+                  <i className={career.gbn}></i>
+                  <p className="tit">{career.name}</p>
+                  <span>{career.date}</span>
+                  <div>{career.content}</div>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </StyledAbout>
+    </motion.div>
   );
 }
 
@@ -88,22 +110,30 @@ const StyledAbout = styled.div`
     .skillWrap {
       display: flex;
       justify-content: space-around;
-      margin: 100px 0;
+      margin: 150px 0;
 
       li {
         color: #fff;
         text-align: center;
+        cursor: pointer;
       }
+
       i {
         font-size: 3rem;
         display: block;
+        margin-bottom: 10px;
       }
+    }
+
+    .skillWrap li i:hover {
+      transform: scale(1.3);
+      transition-duration: 0.5s;
     }
 
     .careerWrap {
       display: flex;
       flex-wrap: wrap;
-      margin: 100px 0;
+      margin: 150px 0;
       justify-content: space-between;
 
       li {
@@ -119,6 +149,7 @@ const StyledAbout = styled.div`
         p.tit {
           font-size: 1.2rem;
           font-weight: 700;
+          margin: 0;
         }
 
         span {
@@ -133,7 +164,7 @@ const StyledAbout = styled.div`
         }
 
         div {
-          font-size: 1rem;
+          font-size: 0.9rem;
           margin-top: 10px;
           white-space: pre-wrap;
         }

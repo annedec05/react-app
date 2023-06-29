@@ -1,56 +1,99 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useState, useEffect } from "react";
+import styled, { keyframes } from "styled-components";
 import { Link } from "react-router-dom";
-import theme from "../config";
-
 import mainSrc from "../config/images/crystal.PNG";
+import { TypeAnimation } from "react-type-animation";
+import { motion } from "framer-motion";
+
+import { useScrollFadeIn } from "../hooks";
 
 function MainTxtWrap() {
+  const ExampleComponent = () => {
+    return (
+      <TypeAnimation
+        sequence={[
+          // Same substring at the start will only be typed out once, initially
+          "I'm Web Developer",
+          1000, // wait 1s before replacing "Mice" with "Hamsters"
+          "I'm Sujung, Ahn",
+          1000,
+        ]}
+        wrapper="span"
+        speed={50}
+        style={{
+          fontSize: "2em",
+          display: "inline-block",
+          fontFamily: "Montserrat",
+          fontWeight: "700",
+        }}
+        repeat={Infinity}
+      />
+    );
+  };
+
+  const animatedItem = {
+    0: useScrollFadeIn("up", 1, 0),
+    1: useScrollFadeIn("right", 1, 0.2),
+    2: useScrollFadeIn("left", 1, 0.5),
+  };
+
   return (
-    <StyledHome>
-      <div class="main-wrap">
-        <div class="main-txt">
-          <p class="tit">AHN SU JUNG</p>
-          <p class="tit-typing">I'm Developer</p>
-        </div>
-
-        <div class="txt-wrap">
-          <div class="txt-intro">
-            <h2>
-              <i class="fa-regular fa-message"></i>ABOUT ME
-            </h2>
-            <p>
-              안녕하세요. 저는 안수정입니다. 😁
-              <br />
-              새로운 기술에 두려워하지 않고 끊임없이 도전하는 '만능개발자'가
-              되고 싶습니다.
-              <br />
-              웹에이전시에서 3년 9개월의 재직 경력이 있으며 현재 프론트엔드
-              개발자로 구직중입니다.
-              <br />
-              도전을 경험할 수 있는 회사에서 일하고 싶습니다.
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
+      <StyledHome>
+        <div className="main-wrap">
+          <div className="main-txt">
+            <p className="tit" {...animatedItem[0]}>
+              PORTFOLIO
             </p>
-            <ul>
-              <li>
-                <span>Name : </span>안수정
-              </li>
-              <li>
-                <span>Birth : </span>1989.12.05
-              </li>
-              <li>
-                <span>Email : </span>annedec05@naver.com
-              </li>
-            </ul>
-
-            <Link to="/about" className="more-btn">
-              MORE ABOUT ME
-            </Link>
+            <p className="tit-typing">
+              <ExampleComponent></ExampleComponent>
+            </p>
           </div>
 
-          <div class="img-box"></div>
+          <div className="txt-wrap">
+            <div className="txt-intro" {...animatedItem[1]}>
+              <h2>
+                <i className="fa-regular fa-message"></i>Hi! There
+              </h2>
+              <p>
+                안녕하세요. 저는 안수정입니다. 😁
+                <br />
+                새로운 기술에 두려워하지 않고 끊임없이 도전하는 '만능개발자'가
+                되고 싶습니다.
+                <br />
+                웹에이전시에서 3년 9개월의 재직 경력이 있으며 현재 프론트엔드
+                개발자로 구직중입니다.
+                <br />
+                도전을 경험할 수 있는 회사에서 일하고 싶습니다.
+              </p>
+              <ul>
+                <li>
+                  <span>Name : </span>안수정
+                </li>
+                <li>
+                  <span>Birth : </span>1989.12.05
+                </li>
+                <li>
+                  <span>Email : </span>annedec05@naver.com
+                </li>
+              </ul>
+
+              <div>
+                <Link to="/about" className="more-btn">
+                  MORE ABOUT ME
+                </Link>
+              </div>
+            </div>
+
+            <div className="img-box" {...animatedItem[2]}></div>
+          </div>
         </div>
-      </div>
-    </StyledHome>
+      </StyledHome>
+    </motion.div>
   );
 }
 
@@ -61,13 +104,13 @@ const StyledHome = styled.main`
   min-height: 100vh;
   .main-wrap {
     max-width: 1100px;
-    padding-top: 200px;
+    padding-top: 150px;
     margin: 0 auto;
 
     .main-txt {
       color: #fff;
       p.tit {
-        font-size: 4rem;
+        font-size: 7rem;
         font-weight: 700;
         font-family: "Montserrat";
         margin: 30px 0;
@@ -77,8 +120,8 @@ const StyledHome = styled.main`
 
   .txt-wrap {
     display: flex;
-    justify-content: space-around;
-    margin-top: 100px;
+    justify-content: space-between;
+    margin-top: 80px;
 
     .fa-regular {
       transform: rotate(90deg);
@@ -104,7 +147,10 @@ const StyledHome = styled.main`
 
     .txt-intro {
       color: #fff;
-      text-align: center;
+      div {
+        text-align: center;
+        margin-top: 5%;
+      }
     }
 
     .more-btn {
@@ -116,6 +162,13 @@ const StyledHome = styled.main`
       line-height: 46px;
       letter-spacing: 0.5px;
       background: #fff;
+      transition: all 0.4s ease-in-out;
+    }
+
+    .more-btn:hover {
+      background: #222;
+      color: #fff;
+      border: 1px solid #fff;
     }
   }
 `;

@@ -1,21 +1,26 @@
 [
   {
+    "num": "skill_1",
     "name": "PHP",
     "font": "fa-brands fa-php"
   },
   {
+    "num": "skill_2",
     "name": "javascript",
     "font": "fa-brands fa-square-js"
   },
   {
+    "num": "skill_3",
     "name": "HTML/CSS",
     "font": "fa-brands fa-html5"
   },
   {
+    "num": "skill_4",
     "name": "React",
     "font": "fa-brands fa-react"
   },
   {
+    "num": "skill_5",
     "name": "GIT",
     "font": "fa-brands fa-git"
   }

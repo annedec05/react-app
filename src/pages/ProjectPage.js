@@ -1,49 +1,70 @@
 import React from "react";
 import styled from "styled-components";
 import projectData from "../config/data/projectData.json";
+import { motion } from "framer-motion";
+import { useScrollFadeIn } from "../hooks";
 
 function ProjectTxtWrap() {
+  const animatedItem = useScrollFadeIn("up", 1, 0);
   return (
-    <StyledProject>
-      <div class="projectWrap">
-        <h2>Project</h2>
-        <ul>
-          {projectData.map((proj, index) => {
-            return (
-              <li>
-                <div class="proj_left">
-                  <img
-                    src={
-                      process.env.PUBLIC_URL + "/project_image/" + proj.img_addr
-                    }
-                  ></img>
-                </div>
-                <div class="proj_right">
-                  <p class="tit">
-                    {proj.name}
-                    <a href={proj.addr} target="_blank">
-                      <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </a>
-                  </p>
-                  <div>
-                    <span>Description</span>
-                    {proj.description}
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
+      <StyledProject>
+        <div className="projectWrap">
+          <h2 {...animatedItem}>Project</h2>
+          <ul>
+            {projectData.map((proj, index) => {
+              return (
+                <li key={proj.num}>
+                  <div className="proj_left">
+                    <img
+                      src={
+                        process.env.PUBLIC_URL +
+                        "/project_image/" +
+                        proj.img_addr
+                      }
+                    ></img>
                   </div>
-                  <div>
-                    <span>Tech Stack</span>
-                    {proj.skill}
+                  <div className="proj_right">
+                    <p className="tit">{proj.name}</p>
+                    <div>
+                      <span>Description</span>
+                      {proj.description}
+                    </div>
+                    <div>
+                      <span>Co-worker</span>
+                      {proj.worker}
+                    </div>
+                    <div>
+                      <span>Tech Stack</span>
+                      {proj.skill}
+                    </div>
+                    <div>
+                      <span>Feature</span>
+                      {proj.function}
+                    </div>
+                    <div>
+                      <span>Etc.</span>
+                      {proj.etc}
+                    </div>
+                    <div>
+                      <span>바로가기</span>
+                      <a href={proj.addr} target="_blank">
+                        Link{" "}
+                        <i className="fa-solid fa-arrow-up-right-from-square"></i>
+                      </a>
+                    </div>
                   </div>
-                  <div>
-                    <span>Feature</span>
-                    {proj.function}
-                  </div>
-                </div>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-    </StyledProject>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </StyledProject>
+    </motion.div>
   );
 }
 
@@ -67,6 +88,7 @@ const StyledProject = styled.div`
       font-weight: 500;
       font-size: 2.5rem;
       font-family: "Montserrat";
+      margin: 20px 0 150px 0;
     }
 
     h2:before,
@@ -106,15 +128,15 @@ const StyledProject = styled.div`
 
       li {
         display: flex;
-        margin-bottom: 3%;
-        padding: 5% 0;
+        margin-bottom: 100px;
+        padding: 5% 1%;
         white-space: pre-wrap;
         background: #fff;
         border-radius: 1rem;
 
         .proj_left {
           flex: 1;
-          min-width: 50%;
+          min-width: 200px;
         }
 
         .proj_right {
@@ -127,10 +149,19 @@ const StyledProject = styled.div`
 
           p.tit {
             font-size: 1.5rem;
+            margin: 0 0 10px 0;
+            font-weight: 900;
+          }
 
+          div {
             a {
-              margin-left: 10px;
-              color: #fff;
+              color: #222;
+              margin-right: 5px;
+            }
+
+            a:hover {
+              font-weight: 900;
+              transition: all 0.4s ease-in-out;
             }
           }
 
@@ -138,8 +169,9 @@ const StyledProject = styled.div`
             display: block;
             margin-right: 5px;
             margin-bottom: 1%;
-            font-weight: 700;
-            font-size: 1.2rem;
+            font-weight: 900;
+            font-size: 1.1rem;
+            margin: 5px 0;
           }
         }
       }

@@ -1,62 +1,68 @@
 [
-    {
-        "name" : "짱죽",
-        "worker": "디자이너 2명, 퍼블리셔 2명, 개발자 1명과 협업",
-        "skill" : "PHP, MySQL, javascript, jquery, ajax",
-        "etc" : "영카트 솔루션 기반으로 제작",
-        "description" : "이유식 전문 판매 사이트",
-        "addr" : "https://www.jjangjuk.com/",
-        "img_addr" : "jjangjuk_mini.png",
-        "function" : "이유식 메뉴관리, 이유식 특성상 분할로 나뉘어 배송되어야 하므로 지정요일 배송관리\n타임세일(지정된 상품을 지정된 시간에 할인된 가격으로 구매 가능)\nWinwheel을 이용한 룰렛 출석체크 기능\n마니또로 지정된 회원의 경우 5% 추가 적립\n프리미엄 회원권 결제시(이니시스 연동) 할인율, 적립율 변동"
-    },
-    {
-        "name" : "트랜스옥션",
-        "worker": "디자이너 1명, 퍼블리셔 1명과 협업",
-        "skill" : "PHP, MySQL, javascript, jquery, ajax",
-        "etc" : "그누보드 솔루션 기반으로 제작",
-        "description" : "번역물 경매 사이트",
-        "addr" : "https://transauction.co.kr/",
-        "img_addr" : "trans_mini.png",
-        "function" : "의뢰인이 번역을 맡기고 싶은 번역물과 번역할 언어, 희망완료일, 희망가격 등의 정보를 기입하여 번역 의뢰\n해당 언어별로 관리자의 승인을 받은 프리랜서에게 sms알림, 번역을 낙찰받고 싶은 프리랜서들이 입찰신청\n의뢰인이 입찰목록 중 의뢰를 맡기고 싶은 프리랜서에게 낙찰(결제)되는 시스템\n쇼핑몰은 아니지만 결제기능 구현을 위해 nicepay 결제 연동"
-    },
-    {
-        "name" : "경북4차산업혁명 기술대전",
-        "worker": "디자이너 1명, 퍼블리셔 1명과 협업",
-        "skill" : "PHP, MySQL, javascript, jquery, ajax",
-        "etc" : "그누보드 솔루션 기반으로 제작",
-        "description" : "2020 경북 4차 산업혁명 전시회 홍보 사이트",
-        "addr" : "http://kbsart.ilogin.pe.kr/",
-        "img_addr" : "kbsart_mini.png",
-        "function" : "리스트+뷰 형태가 아닌 메뉴 클릭시 slide된 content영역에 페이지 전환없이 모든 페이지를 ajax로 보여줌\n고정된 데이터가 아닌 관리자가 언제든 수정할 수 있도록 관리자 페이지와 연동\n회원이 페이지 클릭할 때마다 방문한 페이지 갯수 증가, 영상 시청할때마다 db에 횟수 저장 (하루 1번)\n마이페이지 내에서 방문한 페이지, 참여 이벤트, 시청한 영상의 갯수를 확인가능"
-    },
-    {
-        "name" : "석탄을 넘어서",
-        "worker": "디자이너 1명, 퍼블리셔 1명과 협업",
-        "skill" : "PHP, MySQL, javascript, jquery, ajax",
-        "etc" : "그누보드 솔루션 기반으로 제작",
-        "description" : "전국의 석탄발전소 현황을 공개하고 공유하는 사이트",
-        "addr" : "http://beyondcoal.kr",
-        "img_addr" : "beyondcoal_mini.png",
-        "function" : "발전소 현황, 건강영향, 기후변화, 경제성, 데이터 다섯가지 탭의 분류에 알맞는 석탄발전소 관련 정보를 마커 클릭시 보여줌\n데이터 탭에서는 검색 결과에 맞는 엑셀다운 기능 적용"
-    },
-    {
-        "name" : "k-일러스트레이션페어",
-        "worker": "디자이너 1명, 퍼블리셔 1명과 협업",
-        "skill" : "PHP, MySQL, javascript, jquery, ajax",
-        "etc" : "그누보드 솔루션 기반으로 제작",
-        "description" : "해당 박람회를 소개, 참가신청하려는 작가들이 자신의 작업물을 직접 업로드하는 사이트",
-        "addr" : "http://k-illustrationfair.com/",
-        "img_addr" : "k-illust_mini.png",
-        "function" : "승인된 회원의 게시물만 노출\n초성 검색, 다중필터로 등록된 게시글 통합 검색\n관리자는 전체 내역 엑셀 다운로드 기능"
-    },
-    {
-        "name" : "서울국제주류박람회",
-        "worker": "디자이너 1명, 퍼블리셔 1명과 협업",
-        "skill" : "PHP, MySQL, javascript, jquery, ajax",
-        "etc" : "그누보드 솔루션 기반으로 제작",
-        "description" : "해당 박람회에 참여하고 싶은 바이어, 관람객들이 사전 등록 신청하는 사이트",
-        "addr" : "http://www.siwse.com/",
-        "img_addr" : "siwse_mini.png",
-        "function" : "사전 등록시 등록한 이메일, 전화번호를 통해 사전등록 확인 기능\n사전 등록완료시 기입한 정보를 이메일로 사전등록 완료 메일 발송 기능\n관리자는 전체 내역 엑셀 다운로드 기능"
-    }
+  {
+    "num": "proj_1",
+    "name": "짱죽",
+    "worker": "디자이너 2명, 퍼블리셔 2명, 개발자 1명과 협업",
+    "skill": "PHP, MySQL, javascript, jquery, ajax",
+    "etc": "영카트 솔루션 기반으로 제작",
+    "description": "이유식 전문 판매 사이트",
+    "addr": "https://www.jjangjuk.com/",
+    "img_addr": "jjangjuk_mini.png",
+    "function": "이유식 메뉴관리, 이유식 특성상 분할로 나뉘어 배송되어야 하므로 지정요일 배송관리\n타임세일(지정된 상품을 지정된 시간에 할인된 가격으로 구매 가능)\nWinwheel을 이용한 룰렛 출석체크 기능\n마니또로 지정된 회원의 경우 5% 추가 적립\n프리미엄 회원권 결제시(이니시스 연동) 할인율, 적립율 변동"
+  },
+  {
+    "num": "proj_2",
+    "name": "트랜스옥션",
+    "worker": "디자이너 1명, 퍼블리셔 1명과 협업",
+    "skill": "PHP, MySQL, javascript, jquery, ajax",
+    "etc": "그누보드 솔루션 기반으로 제작",
+    "description": "번역물 경매 사이트",
+    "addr": "https://transauction.co.kr/",
+    "img_addr": "trans_mini.png",
+    "function": "의뢰인이 번역을 맡기고 싶은 번역물과 번역할 언어, 희망완료일, 희망가격 등의 정보를 기입하여 번역 의뢰\n해당 언어별로 관리자의 승인을 받은 프리랜서에게 sms알림, 번역을 낙찰받고 싶은 프리랜서들이 입찰신청\n의뢰인이 입찰목록 중 의뢰를 맡기고 싶은 프리랜서에게 낙찰(결제)되는 시스템\n쇼핑몰은 아니지만 결제기능 구현을 위해 nicepay 결제 연동"
+  },
+  {
+    "num": "proj_3",
+    "name": "경북4차산업혁명 기술대전",
+    "worker": "디자이너 1명, 퍼블리셔 1명과 협업",
+    "skill": "PHP, MySQL, javascript, jquery, ajax",
+    "etc": "그누보드 솔루션 기반으로 제작",
+    "description": "2020 경북 4차 산업혁명 전시회 홍보 사이트",
+    "addr": "http://kbsart.ilogin.pe.kr/",
+    "img_addr": "kbsart_mini.png",
+    "function": "리스트+뷰 형태가 아닌 메뉴 클릭시 slide된 content영역에 페이지 전환없이 모든 페이지를 ajax로 보여줌\n고정된 데이터가 아닌 관리자가 언제든 수정할 수 있도록 관리자 페이지와 연동\n회원이 페이지 클릭할 때마다 방문한 페이지 갯수 증가, 영상 시청할때마다 db에 횟수 저장 (하루 1번)\n마이페이지 내에서 방문한 페이지, 참여 이벤트, 시청한 영상의 갯수를 확인가능"
+  },
+  {
+    "num": "proj_4",
+    "name": "석탄을 넘어서",
+    "worker": "디자이너 1명, 퍼블리셔 1명과 협업",
+    "skill": "PHP, MySQL, javascript, jquery, ajax",
+    "etc": "그누보드 솔루션 기반으로 제작",
+    "description": "전국의 석탄발전소 현황을 공개하고 공유하는 사이트",
+    "addr": "http://beyondcoal.kr",
+    "img_addr": "beyondcoal_mini.png",
+    "function": "발전소 현황, 건강영향, 기후변화, 경제성, 데이터 다섯가지 탭의 분류에 알맞는 석탄발전소 관련 정보를 마커 클릭시 보여줌\n데이터 탭에서는 검색 결과에 맞는 엑셀다운 기능 적용"
+  },
+  {
+    "num": "proj_5",
+    "name": "k-일러스트레이션페어",
+    "worker": "디자이너 1명, 퍼블리셔 1명과 협업",
+    "skill": "PHP, MySQL, javascript, jquery, ajax",
+    "etc": "그누보드 솔루션 기반으로 제작",
+    "description": "해당 박람회를 소개, 참가신청하려는 작가들이 자신의 작업물을 직접 업로드하는 사이트",
+    "addr": "http://k-illustrationfair.com/",
+    "img_addr": "k-illust_mini.png",
+    "function": "승인된 회원의 게시물만 노출\n초성 검색, 다중필터로 등록된 게시글 통합 검색\n관리자는 전체 내역 엑셀 다운로드 기능"
+  },
+  {
+    "num": "proj_6",
+    "name": "서울국제주류박람회",
+    "worker": "디자이너 1명, 퍼블리셔 1명과 협업",
+    "skill": "PHP, MySQL, javascript, jquery, ajax",
+    "etc": "그누보드 솔루션 기반으로 제작",
+    "description": "해당 박람회에 참여하고 싶은 바이어, 관람객들이 사전 등록 신청하는 사이트",
+    "addr": "http://www.siwse.com/",
+    "img_addr": "siwse_mini.png",
+    "function": "사전 등록시 등록한 이메일, 전화번호를 통해 사전등록 확인 기능\n사전 등록완료시 기입한 정보를 이메일로 사전등록 완료 메일 발송 기능\n관리자는 전체 내역 엑셀 다운로드 기능"
+  }
 ]

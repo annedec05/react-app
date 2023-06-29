@@ -1,51 +1,52 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function Header(props) {
-  console.log(props);
+  const location = useLocation();
+
   return (
     <StyledHeader>
       <ul>
-        <li>
-          <a class="link link--metis">
-            <p class="front">
+        <li className="inactive">
+          <a className="link link--metis">
+            <p className="front">
               Front-end
               <br />
               Developer
             </p>
           </a>
         </li>
-        <li class={props.page === "MainPage" ? "active" : ""}>
-          <Link to="/" class="link link--metis">
-            <i class="fa-sharp fa-solid fa-house"></i>
+        <li className={location.pathname == "/" ? "active" : "inactive"}>
+          <Link to="/" className="link link--metis">
+            <i className="fa-sharp fa-solid fa-house"></i>
             <span>Home</span>
             <p>It's about me. click if you want to know</p>
           </Link>
         </li>
-        <li>
-          <Link to="/about" class="link link--metis">
-            <i class="fa-solid fa-user"></i>
+        <li className={location.pathname == "/about" ? "active" : "inactive"}>
+          <Link to="/about" className="link link--metis">
+            <i className="fa-solid fa-user"></i>
             <span>About</span>
             <p>
               Education and experience and skills I have learned and used so far
             </p>
           </Link>
         </li>
-        <li>
-          <Link to="/project" class="link link--metis">
-            <i class="fa-solid fa-folder"></i>
+        <li className={location.pathname == "/project" ? "active" : "inactive"}>
+          <Link to="/project" className="link link--metis">
+            <i className="fa-solid fa-folder"></i>
             <span>Project</span>
             <p>It's a website I made</p>
           </Link>
         </li>
-        <li>
+        <li className="inactive">
           <a
             href="https://github.com/annedec05"
             target="_blank"
-            class="link link--metis"
+            className="link link--metis"
           >
-            <i class="fa-brands fa-github"></i>
+            <i className="fa-brands fa-github"></i>
             <span>GITHUB</span>
             <p>My github</p>
           </a>
@@ -56,10 +57,13 @@ function Header(props) {
 }
 
 const StyledHeader = styled.header`
-  position: absolute;
-  top: 20px;
+  position: fixed;
+  top: 0px;
   z-index: 100;
   width: 100%;
+  min-height: 120px;
+  background: #222;
+  padding-top: 20px;
 
   ul {
     display: flex;
@@ -105,7 +109,9 @@ const StyledHeader = styled.header`
       a::before {
         content: "";
       }
+    }
 
+    li.inactive {
       a::before {
         transform-origin: 100% 50%;
         transform: scale3d(0, 1, 1);

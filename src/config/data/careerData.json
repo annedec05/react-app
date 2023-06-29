@@ -1,23 +1,27 @@
 [
   {
+    "num": "career_1",
     "date": "2015.03 ~ 2018.02",
     "gbn": "fa-solid fa-school",
     "name": "연성대학교",
-    "content": "컴퓨터 소프트웨어학과 졸업 3.8 / 4.5"
+    "content": "컴퓨터 소프트웨어학과 졸업 3.8 / 4.5\nJava, JSP, HTML&CSS, C, C++, MySQL, MsSQL, Oracle"
   },
   {
+    "num": "career_2",
     "date": "2018.04 ~ 2018.10",
     "gbn": "fa-solid fa-school",
     "name": "자바기반 IT콘텐츠 개발자 전문과정 수료",
     "content": "Java 프로그래밍, Oracle Database, MySQL Database, Jsp&Servlet, 웹표준 구현(HTML5, CSS3, Javascript, jQuery)"
   },
   {
+    "num": "career_3",
     "date": "2017.07 ~ 2017.08",
     "gbn": "fa-solid fa-building",
     "name": "넷아이디",
-    "content": "서버개발팀 인턴"
+    "content": "서버개발팀 인턴\n리눅스 환경 파일시스템 구축\n문서중앙화 솔루션 회사의 프로세스를 이해"
   },
   {
+    "num": "career_4",
     "date": "2018.10 ~ 2022.06",
     "gbn": "fa-solid fa-building",
     "name": "아이모토",
