@@ -33,8 +33,7 @@ function MainTxtWrap() {
 
   const animatedItem = {
     0: useScrollFadeIn("up", 1, 0),
-    1: useScrollFadeIn("up", 1, 0.2),
-    2: useScrollFadeIn("up", 1, 0.5),
+    1: useScrollFadeIn("left", 1, 0.2),
   };
 
   return (
@@ -45,17 +44,15 @@ function MainTxtWrap() {
     >
       <StyledHome>
         <div className="main-wrap">
-          <div className="main-txt">
-            <p className="tit" {...animatedItem[0]}>
-              PORTFOLIO
-            </p>
+          <div className="main-txt" {...animatedItem[0]}>
+            <p className="tit">PORTFOLIO</p>
             <p className="tit-typing">
               <ExampleComponent></ExampleComponent>
             </p>
           </div>
 
-          <div className="txt-wrap">
-            <div className="txt-intro" {...animatedItem[1]}>
+          <div className="txt-wrap" {...animatedItem[1]}>
+            <div className="txt-intro">
               <h2>
                 <i className="fa-regular fa-message"></i>Hi! There
               </h2>
@@ -89,7 +86,7 @@ function MainTxtWrap() {
               </div>
             </div>
 
-            <div className="img-box" {...animatedItem[2]}></div>
+            <div className="img-box"></div>
           </div>
         </div>
       </StyledHome>

@@ -5,7 +5,15 @@ import { motion } from "framer-motion";
 import { useScrollFadeIn } from "../hooks";
 
 function ProjectTxtWrap() {
-  const animatedItem = useScrollFadeIn("up", 1, 0);
+  const animatedItem = {
+    0: useScrollFadeIn("left", 1, 0),
+    1: useScrollFadeIn("down", 1, 0.3),
+    2: useScrollFadeIn("down", 1, 0.3),
+    3: useScrollFadeIn("down", 1, 0.3),
+    4: useScrollFadeIn("down", 1, 0.3),
+    5: useScrollFadeIn("down", 1, 0.3),
+    6: useScrollFadeIn("down", 1, 0.3),
+  };
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -14,54 +22,57 @@ function ProjectTxtWrap() {
     >
       <StyledProject>
         <div className="projectWrap">
-          <h2 {...animatedItem}>Project</h2>
-          <ul>
-            {projectData.map((proj, index) => {
-              return (
-                <li key={proj.num}>
-                  <div className="proj_left">
-                    <img
-                      src={
-                        process.env.PUBLIC_URL +
-                        "/project_image/" +
-                        proj.img_addr
-                      }
-                    ></img>
-                  </div>
-                  <div className="proj_right">
-                    <p className="tit">{proj.name}</p>
-                    <div>
-                      <span>Description</span>
-                      {proj.description}
+          <h2 {...animatedItem[0]}>Project</h2>
+          <div>
+            <ul>
+              {projectData.map((proj, index) => {
+                return (
+                  <li key={proj.num} {...animatedItem[index + 1]}>
+                    <div className="proj_left">
+                      <div></div>
+                      <img
+                        src={
+                          process.env.PUBLIC_URL +
+                          "/project_image/" +
+                          proj.img_addr
+                        }
+                      ></img>
                     </div>
-                    <div>
-                      <span>Co-worker</span>
-                      {proj.worker}
+                    <div className="proj_right">
+                      <p className="tit">{proj.name}</p>
+                      <div>
+                        <span>Description</span>
+                        {proj.description}
+                      </div>
+                      <div>
+                        <span>Co-worker</span>
+                        {proj.worker}
+                      </div>
+                      <div>
+                        <span>Tech Stack</span>
+                        {proj.skill}
+                      </div>
+                      <div>
+                        <span>Feature</span>
+                        {proj.function}
+                      </div>
+                      <div>
+                        <span>Etc.</span>
+                        {proj.etc}
+                      </div>
+                      <div>
+                        <span>바로가기</span>
+                        <a href={proj.addr} target="_blank">
+                          Link{" "}
+                          <i className="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                      </div>
                     </div>
-                    <div>
-                      <span>Tech Stack</span>
-                      {proj.skill}
-                    </div>
-                    <div>
-                      <span>Feature</span>
-                      {proj.function}
-                    </div>
-                    <div>
-                      <span>Etc.</span>
-                      {proj.etc}
-                    </div>
-                    <div>
-                      <span>바로가기</span>
-                      <a href={proj.addr} target="_blank">
-                        Link{" "}
-                        <i className="fa-solid fa-arrow-up-right-from-square"></i>
-                      </a>
-                    </div>
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
         </div>
       </StyledProject>
     </motion.div>
@@ -196,6 +207,7 @@ const StyledProject = styled.div`
       ul {
         li {
           flex-direction: column;
+          margin-bottom: 50px;
         }
       }
     }
